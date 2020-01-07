@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.NPC;
@@ -50,13 +49,13 @@ public class MasterFarmerPlugin extends Plugin
 	}
 
 	@Override
-	protected void startUp() throws Exception
+	protected void startUp()
 	{
 		overlayManager.add(masterfarmeroverlay);
 	}
 
 	@Override
-	protected void shutDown() throws Exception
+	protected void shutDown()
 	{
 		overlayManager.remove(masterfarmeroverlay);
 		masterFarmers.clear();
@@ -140,7 +139,6 @@ public class MasterFarmerPlugin extends Plugin
 				{
 					mf.setTimeWithoutMoving(lastTickUpdate.getEpochSecond() - mf.getStoppedMovingTick().getEpochSecond());
 				}
-				continue;
 			}
 		}
 	}
