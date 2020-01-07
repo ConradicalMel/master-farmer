@@ -28,7 +28,7 @@ public interface MasterFarmerConfig extends Config
 	)
 	default Color timerColor()
 	{
-		return Color.WHITE;
+		return Color.RED;
 	}
 
 	@Range(
